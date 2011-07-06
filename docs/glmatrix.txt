@@ -1,0 +1,49 @@
+http://code.google.com/p/glmatrix/wiki/Usage
+
+mat4.create()
+	Returns a 16 element array. If WebGL is enabled, array type will be WebGLFloatArray, otherwise it will be a standard javascript Array.
+
+mat4.set(mat, dest)
+	Copies the contents of mat into dest.
+
+mat4.identity(dest)
+	Set dest to an identity matrix.
+
+mat4.transpose(mat, dest)
+	Transposes mat
+
+mat4.determinant(mat)
+	Returns the determinant of mat. mat is left unchanged.
+
+mat4.inverse(mat, dest)
+	Inverts mat
+
+mat4.toMat3(mat, dest)
+	Populates dest with the upper 3x3 elements of the matrix. (ie: The rotation matrix). dest is expected to be a sequence of at least 9 elements. If dest is not specified a new 9 element array is created and returned.
+
+mat4.toInverseMat3(mat, dest)
+	Calculates the inverse of the top 3x3 elements of mat. (ie: calculates the normal matrix). dest is expected to be a sequence of at least 9 elements. If dest is not specified a new 9 element array is created and returned.
+
+mat4.multiply(mat, mat2, dest)
+	Multiplies mat and mat2
+
+mat4.multiplyVec3(mat, vec, dest)
+	Multiplies the the vector vec by mat. vec and dest are expected to be sequences of at least 3 elements. If dest is not provided the result is written into vec.
+
+mat4.translate(mat, vec, dest)
+	Translates mat by the vector vec.
+
+mat4.scale(mat, vec, dest)
+	Scales mat by the vector vec.
+
+mat4.rotate(mat, angle, axis, dest)
+	Rotates mat by angle (given in radians) around the axis given by the vector axis.
+
+mat4.frustum(left, right, bottom, top, near, far, dest)
+	Calculates a frustum matrix with the given parameters and writes it into dest.
+
+mat4.perspective(fovy, aspect, near, far, dest)
+	Calculates a perspective matrix with the given parameters and writes it into dest.
+
+mat4.ortho(left, right, bottom, top, near, far, dest)
+	Calculates a orthogonal matrix with the given parameters and writes it into dest.
